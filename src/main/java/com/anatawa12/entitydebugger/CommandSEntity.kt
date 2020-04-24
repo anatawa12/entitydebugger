@@ -7,7 +7,7 @@ import net.minecraft.server.MinecraftServer
 import net.minecraft.util.text.TextComponentString
 import net.minecraftforge.client.IClientCommand
 
-object CommandSEntity : CommandEntityBase(), IClientCommand {
+object CommandSEntity : CommandEntityBase() {
     override fun getName(): String = "s:entity"
 
     override fun execute(server: MinecraftServer, sender: ICommandSender, args: Array<String>) {

@@ -5,12 +5,9 @@ import net.minecraft.entity.Entity
 import net.minecraft.nbt.NBTTagCompound
 import net.minecraft.server.MinecraftServer
 import net.minecraft.util.text.TextComponentString
-import net.minecraftforge.client.IClientCommand
 
-abstract class CommandEntityBase : CommandBase(), IClientCommand {
+abstract class CommandEntityBase : CommandBase() {
     override fun getUsage(sender: ICommandSender): String = "/$name <selector> [data|nbt|default]"
-
-    override fun allowUsageWithoutPrefix(sender: ICommandSender?, message: String?): Boolean = false
 
     protected fun main(sender: ICommandSender, args: Array<String>) {
         if (args.isEmpty()) throw WrongUsageException(getUsage(sender))
@@ -57,5 +54,5 @@ abstract class CommandEntityBase : CommandBase(), IClientCommand {
         sender.sendMessage(TextComponentString("$entity: ${entity.writeToNBT(NBTTagCompound())}"))
     }
 
-    override fun checkPermission(server: MinecraftServer, sender: ICommandSender): Boolean = true
+    override fun checkPermission(server: MinecraftServer?, sender: ICommandSender?): Boolean = true
 }
