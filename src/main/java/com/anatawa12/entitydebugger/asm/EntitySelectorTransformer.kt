@@ -1,8 +1,7 @@
 package com.anatawa12.entitydebugger.asm
 
+import com.anatawa12.entitydebugger.EntitySelectorHook
 import net.minecraft.launchwrapper.IClassTransformer
-import net.minecraft.launchwrapper.Launch
-import net.minecraft.launchwrapper.LaunchClassLoader
 import org.objectweb.asm.*
 
 class EntitySelectorTransformer : IClassTransformer {

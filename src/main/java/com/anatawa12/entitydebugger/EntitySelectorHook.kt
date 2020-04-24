@@ -1,4 +1,4 @@
-package com.anatawa12.entitydebugger.asm
+package com.anatawa12.entitydebugger
 
 import net.minecraft.command.ICommandSender
 import net.minecraft.server.MinecraftServer
