@@ -24,7 +24,8 @@ object EntityDebugger {
 
     @Mod.EventHandler
     fun postinit(event: FMLPostInitializationEvent) {
-        ClientCommandHandler.instance.registerCommand(CommandCEntity)
+        if (event.side == Side.CLIENT) 
+            ClientCommandHandler.instance.registerCommand(CommandCEntity)
     }
 
     @Mod.EventHandler
