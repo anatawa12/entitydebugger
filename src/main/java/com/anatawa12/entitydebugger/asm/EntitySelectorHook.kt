@@ -6,5 +6,9 @@ import net.minecraft.world.World
 
 object EntitySelectorHook {
     @JvmStatic
-    fun getWorlds(server: MinecraftServer?, sender: ICommandSender): Array<out World> = server?.worlds ?: arrayOf(sender.entityWorld)
+    fun getWorlds(server: MinecraftServer?, sender: ICommandSender): Array<out World> {
+        if (sender.entityWorld.isRemote)
+            return arrayOf(sender.entityWorld)
+        return server!!.worlds
+    }
 }
